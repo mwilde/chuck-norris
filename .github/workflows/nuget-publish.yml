@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: 🥋 Chuck Norris doesn't check out code. Code checks itself out.
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: ⚙️ Setup .NET
         uses: actions/setup-dotnet@v4
@@ -20,13 +22,17 @@ jobs:
           dotnet-version: "10.0.x"
 
       - name: 🔨 Build
-        run: dotnet build src/ChuckNorris.Extensions/ChuckNorris.Extensions.csproj --configuration Release
+        run: |
+          dotnet build src/ChuckNorris.Extensions/ChuckNorris.Extensions.csproj --configuration Release
+          dotnet build src/ChuckNorris.Extensions.Blazor/ChuckNorris.Extensions.Blazor.csproj --configuration Release
 
       - name: ✅ Test — they all pass. They wouldn't dare fail.
         run: dotnet run --project tests/ChuckNorris.Extensions.Tests/ChuckNorris.Extensions.Tests.csproj --configuration Release --no-build
 
       - name: 📦 Pack
-        run: dotnet pack src/ChuckNorris.Extensions/ChuckNorris.Extensions.csproj --configuration Release --no-build --output ./nupkg
+        run: |
+          dotnet pack src/ChuckNorris.Extensions/ChuckNorris.Extensions.csproj --configuration Release --no-build --output ./nupkg
+          dotnet pack src/ChuckNorris.Extensions.Blazor/ChuckNorris.Extensions.Blazor.csproj --configuration Release --no-build --output ./nupkg
 
       - name: 🚀 Push to NuGet.org
         run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
