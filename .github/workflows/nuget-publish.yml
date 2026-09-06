@@ -27,6 +27,7 @@ jobs:
         run: |
           dotnet build src/ChuckNorris.Extensions/ChuckNorris.Extensions.csproj --configuration Release
           dotnet build src/ChuckNorris.Extensions.Blazor/ChuckNorris.Extensions.Blazor.csproj --configuration Release
+          dotnet build tests/ChuckNorris.Extensions.Tests/ChuckNorris.Extensions.Tests.csproj --configuration Release
 
       - name: ✅ Test — they all pass. They wouldn't dare fail.
         run: dotnet run --project tests/ChuckNorris.Extensions.Tests/ChuckNorris.Extensions.Tests.csproj --configuration Release --no-build
