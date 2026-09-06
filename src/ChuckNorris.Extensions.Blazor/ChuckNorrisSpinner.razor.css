@@ -1,0 +1,19 @@
+.chuck-norris-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #b22222;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.fist {
+    font-size: 2rem;
+    animation: fist-pump 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes fist-pump {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-10px); }
+}

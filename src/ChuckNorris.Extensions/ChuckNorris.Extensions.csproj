@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>ChuckNorris.Extensions</PackageId>
+    <Authors>Moritz Wilde</Authors>
+    <Description>Chuck Norris doesn't write extensions. He stares at the code until it extends itself. 🥋 String, int and collection extensions plus ASP.NET Core middleware that injects a Chuck Norris fact into every HTTP response.</Description>
+    <PackageTags>chuck-norris;easter-egg;fun;middleware;extensions;aspnetcore</PackageTags>
+    <RepositoryUrl>https://github.com/mwilde/chuck-norris</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/mwilde/chuck-norris</PackageProjectUrl>
+    <Copyright>Copyright (c) 2024 Moritz Wilde</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
+

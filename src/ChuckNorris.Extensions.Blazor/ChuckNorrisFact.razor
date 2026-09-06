@@ -1,0 +1,9 @@
+@* #1 — Chuck Norris Fact component. Click to refresh. *@
+<div class="chuck-norris-fact"
+     @onclick="Refresh"
+     title="@(Refreshable ? "Click for another fact" : null)"
+     style="cursor: @(Refreshable ? "pointer" : "default");">
+    <span class="emoji">@ChuckNorrisEmojis.Kick</span>
+    <span>@Fact</span>
+</div>
+

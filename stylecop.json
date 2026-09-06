@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+  "settings": {
+    "documentationRules": {
+      "companyName": "KWS SAAT SE",
+      "copyrightText": "Copyright © KWS SAAT SE {year}. All rights reserved.",
+      "xmlHeader": false
+    },
+    "orderingRules": {
+      "usingDirectivesPlacement": "insideNamespace"
+    },
+    "layoutRules": {
+      "newlineAtEndOfFile": "require"
+    }
+  }
+}

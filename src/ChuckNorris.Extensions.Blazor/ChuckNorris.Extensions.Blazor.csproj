@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PackageId>ChuckNorris.Extensions.Blazor</PackageId>
+    <Authors>Moritz Wilde</Authors>
+    <Description>Chuck Norris Blazor components. Because every Blazor app deserves a roundhouse kick. 🥋</Description>
+    <PackageTags>chuck-norris;easter-egg;fun;blazor;components</PackageTags>
+    <RepositoryUrl>https://github.com/mwilde/chuck-norris</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/mwilde/chuck-norris</PackageProjectUrl>
+    <Copyright>Copyright (c) 2024 Moritz Wilde</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChuckNorris.Extensions\ChuckNorris.Extensions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
+

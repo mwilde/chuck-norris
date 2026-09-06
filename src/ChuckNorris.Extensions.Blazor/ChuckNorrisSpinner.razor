@@ -1,0 +1,10 @@
+@* #6 — Chuck Norris Spinner. Chuck Norris doesn't wait. But you do. *@
+<div class="chuck-norris-spinner">
+    <span class="fist">@ChuckNorrisEmojis.Fist</span>
+    <span>@Message</span>
+</div>
+
+@code {
+    [Parameter] public string Message { get; set; } = "Chuck Norris doesn't wait. But you do.";
+}
+

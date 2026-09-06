@@ -1,0 +1,13 @@
+@* #2 — Konami Code Easter Egg. Type ↑↑↓↓←→←→ to trigger. *@
+@implements IAsyncDisposable
+
+@if (Activated)
+{
+    <div class="overlay" @onclick="Dismiss">
+        <span class="big-fist">@ChuckNorrisEmojis.Kick</span>
+        <h1>CHUCK NORRIS</h1>
+        <p class="fact">"@Fact"</p>
+        <p class="hint">Click anywhere to dismiss</p>
+    </div>
+}
+

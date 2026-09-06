@@ -1,0 +1,34 @@
+@* Chuck Norris Reconnect Modal — drop-in replacement for the default Blazor ReconnectModal *@
+<script type="module" src="./_content/ChuckNorris.Extensions.Blazor/chuck-norris-reconnect.js"></script>
+
+<dialog id="components-reconnect-modal" data-nosnippet>
+    <div class="chuck-reconnect-content">
+        <div class="chuck-reconnect-icon">@ChuckNorrisEmojis.Kick</div>
+        <p class="components-reconnect-first-attempt-visible">
+            <strong>Chuck Norris is reconnecting the server...</strong><br/>
+            The server doesn't dare stay disconnected for long.
+        </p>
+        <p class="components-reconnect-repeated-attempt-visible">
+            <strong>Still reconnecting...</strong><br/>
+            Trying again in <span id="components-seconds-to-next-attempt"></span> seconds. Chuck Norris is not amused.
+        </p>
+        <p class="components-reconnect-failed-visible">
+            <strong>Chuck Norris gave up.</strong><br/>
+            That means it's truly broken.
+        </p>
+        <button id="components-reconnect-button" class="chuck-alert-modal-btn components-reconnect-failed-visible">
+            Try Again @ChuckNorrisEmojis.Kick
+        </button>
+        <p class="components-pause-visible">
+            <strong>The session has been paused.</strong><br/>
+            Even Chuck Norris takes a break sometimes.
+        </p>
+        <p class="components-resume-failed-visible">
+            <strong>Failed to resume.</strong><br/>
+            Chuck Norris is disappointed.
+        </p>
+        <button id="components-resume-button" class="chuck-alert-modal-btn components-pause-visible components-resume-failed-visible">
+            Resume @ChuckNorrisEmojis.Kick
+        </button>
+    </div>
+</dialog>

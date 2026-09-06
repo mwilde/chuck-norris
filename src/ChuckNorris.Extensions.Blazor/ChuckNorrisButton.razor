@@ -1,0 +1,11 @@
+@* #4 — Chuck Norris Button. Roundhouse kicks itself when clicked. *@
+<button class="chuck-norris-btn"
+        @ref="_buttonRef"
+        @onclick="OnClick">
+    @if (ShowEmoji)
+    {
+        <span>@ChuckNorrisEmojis.Kick</span>
+    }
+    @ChildContent
+</button>
+

@@ -1,0 +1,19 @@
+@* #5 — Chuck Norris 404 page. Use inside your NotFound content in Routes.razor. *@
+<div class="chuck-norris-404">
+    <span class="big-fist">@ChuckNorrisEmojis.Kick</span>
+    <h1>404</h1>
+    <p><strong>Chuck Norris found this page.</strong><br />Then he roundhouse kicked it into oblivion.</p>
+    <p class="fact">"@Fact"</p>
+    @if (HomeHref is not null)
+    {
+        <a href="@HomeHref">← Go back before Chuck Norris notices</a>
+    }
+</div>
+
+@code {
+    protected string Fact { get; } = ChuckNorrisFacts.GetRandom();
+
+    /// <summary>Optional href for a home link. If null, no link is rendered.</summary>
+    [Parameter] public string? HomeHref { get; set; } = "/";
+}
+

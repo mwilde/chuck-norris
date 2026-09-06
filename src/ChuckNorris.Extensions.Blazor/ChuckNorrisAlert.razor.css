@@ -1,0 +1,76 @@
+.chuck-norris-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 1rem 1.25rem;
+    border-radius: 2px;
+    font-weight: 600;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0.03em;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.6), inset 0 0 40px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    transition: filter 0.15s, transform 0.15s;
+    cursor: pointer;
+}
+
+.chuck-norris-alert::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.chuck-norris-alert:hover  { filter: brightness(1.1); transform: translateY(-1px); }
+.chuck-norris-alert:active { transform: translateY(0); }
+
+.chuck-norris-alert.info {
+    background: #1c2b3a; color: #c8b99a;
+    border-left: 5px solid #7a9ab0;
+    border-bottom: 1px solid #7a9ab0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.chuck-norris-alert.success {
+    background: #1e2a18; color: #c4c89a;
+    border-left: 5px solid #6b7c3a;
+    border-bottom: 1px solid #6b7c3a;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.chuck-norris-alert.warning {
+    background: #2e1f08; color: #d4a85a;
+    border-left: 5px solid #c07830;
+    border-bottom: 1px solid #c07830;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.chuck-norris-alert.danger {
+    background: #2a0a08; color: #c87060;
+    border-left: 5px solid #8b1a10;
+    border-bottom: 1px solid #8b1a10;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.alert-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    filter: sepia(0.4);
+}
+
+.chuck-norris-alert strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.chuck-norris-alert div {
+    font-size: 0.88rem;
+    line-height: 1.5;
+}

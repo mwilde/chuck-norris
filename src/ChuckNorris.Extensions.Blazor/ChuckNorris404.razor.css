@@ -1,0 +1,17 @@
+.chuck-norris-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.big-fist { font-size: 5rem; }
+
+h1 { font-size: 2rem; color: #b22222; margin: 0; }
+
+p { color: #888; max-width: 400px; }
+
+.fact { font-style: italic; color: #ccc; }

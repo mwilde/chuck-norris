@@ -1,0 +1,26 @@
+@* #3 — Chuck Norris Alert. Replaces boring alerts with Chuck Norris themed ones. *@
+<div class="chuck-norris-alert @Type.ToString().ToLowerInvariant()"
+     @onclick="ShowModal"
+     title="@(Clickable ? "Click to get a Chuck Norris alert" : null)"
+     style="cursor: @(Clickable ? "pointer" : "default");">
+    <span class="alert-icon">@Icon</span>
+    <div>
+        @if (!string.IsNullOrWhiteSpace(Title))
+        {
+            <strong>@Title</strong><br />
+        }
+        @ChildContent
+    </div>
+</div>
+
+@if (ModalVisible)
+{
+    <div class="chuck-alert-backdrop" @onclick="CloseModal">
+        <div class="chuck-alert-modal @Type.ToString().ToLowerInvariant()" @onclick:stopPropagation="true">
+            <div class="chuck-alert-modal-icon">@Icon</div>
+            <p class="chuck-alert-modal-message">@ResolvedModalMessage</p>
+            <button class="chuck-alert-modal-btn" @onclick="CloseModal">UNDERSTOOD @ChuckNorrisEmojis.Kick</button>
+        </div>
+    </div>
+}
+
