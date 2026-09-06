@@ -21,9 +21,12 @@ jobs:
               issue_number: context.payload.pull_request.number,
               assignees: ['mwilde']
             });
-            await github.rest.pulls.requestReviewers({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
-              reviewers: ['mwilde']
-            });
+            // Skip reviewer request if the PR author is mwilde (can't review own PR)
+            if (context.payload.pull_request.user.login !== 'mwilde') {
+              await github.rest.pulls.requestReviewers({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.payload.pull_request.number,
+                reviewers: ['mwilde']
+              });
+            }
