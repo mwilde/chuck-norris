@@ -1,0 +1,209 @@
+﻿/* Chuck Norris — global styles for components using position:fixed and shared font */
+
+.chuck-norris-alert,
+.chuck-norris-btn,
+.chuck-alert-modal,
+.chuck-alert-modal-btn,
+.chuck-alert-modal-message,
+.chuck-reconnect-content {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Alert Modal backdrop */
+.chuck-alert-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.80);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chuck-alert-modal {
+    border-radius: 2px;
+    padding: 2rem 2.5rem;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.7);
+    animation: chuckModalIn 0.2s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.chuck-alert-modal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.chuck-alert-modal.info    { background: #1c2b3a; color: #c8b99a; border: 2px solid #7a9ab0; }
+.chuck-alert-modal.success { background: #1e2a18; color: #c4c89a; border: 2px solid #6b7c3a; }
+.chuck-alert-modal.warning { background: #2e1f08; color: #d4a85a; border: 2px solid #c07830; }
+.chuck-alert-modal.danger  { background: #2a0a08; color: #c87060; border: 2px solid #8b1a10; }
+
+.chuck-alert-modal-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    filter: sepia(0.4);
+}
+
+.chuck-alert-modal-message {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    letter-spacing: 0.02em;
+}
+
+.chuck-alert-modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.25rem;
+    background: #b22222;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.chuck-alert-modal-btn:hover { background: #8b0000; }
+
+@keyframes chuckModalIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+/* Chuck Norris Reconnect Modal */
+#components-reconnect-modal {
+    border: none;
+    background: transparent;
+    padding: 0;
+    max-width: none;
+    color: inherit;
+    opacity: 0;
+    transition: display 0.5s allow-discrete, overlay 0.5s allow-discrete;
+    animation: chuckReconnectFadeOut 0.5s both;
+}
+
+#components-reconnect-modal[open] {
+    animation: chuckReconnectSlideUp 1.5s cubic-bezier(.05, .89, .25, 1.02) 0.3s,
+    chuckReconnectFadeIn 0.5s ease-in-out 0.3s;
+    animation-fill-mode: both;
+}
+
+#components-reconnect-modal::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+    animation: chuckReconnectFadeIn 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.chuck-reconnect-content {
+    font-family: "Courier New", Courier, monospace;
+    background: #2a0a08;
+    color: #c87060;
+    border: 2px solid #8b1a10;
+    border-radius: 2px;
+    padding: 2rem 2.5rem;
+    text-align: center;
+    min-width: 320px;
+    max-width: 420px;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.03em;
+}
+
+.chuck-reconnect-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.chuck-reconnect-icon {
+    font-size: 3rem;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-bottom: 1rem;
+    filter: sepia(0.4);
+}
+
+.chuck-reconnect-content strong {
+    display: block;
+    color: #c87060;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.chuck-reconnect-content p {
+    color: #a06050;
+    margin: 0.5rem 0 0.75rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.components-reconnect-first-attempt-visible,
+.components-reconnect-repeated-attempt-visible,
+.components-reconnect-failed-visible,
+.components-pause-visible,
+.components-resume-failed-visible {
+    display: none;
+}
+
+#components-reconnect-modal.components-reconnect-show .components-reconnect-first-attempt-visible,
+#components-reconnect-modal.components-reconnect-retrying .components-reconnect-repeated-attempt-visible,
+#components-reconnect-modal.components-reconnect-failed .components-reconnect-failed-visible,
+#components-reconnect-modal.components-reconnect-paused .components-pause-visible,
+#components-reconnect-modal.components-reconnect-resume-failed .components-resume-failed-visible {
+    display: block;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes chuckReconnectSlideUp {
+    0% {
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes chuckReconnectFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes chuckReconnectFadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,31 @@
+/* Chuck Norris doesn't need styles. But your demo app does. */
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background: #111;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1, h2 { color: #b22222; }
+hr { border-color: #333; margin: 2rem 0; }
+p { color: #aaa; }
+
+#blazor-error-ui {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    max-width: 400px;
+    display: none;
+}
+
+#blazor-error-ui[style*="display: block"] {
+    display: block !important;
+}

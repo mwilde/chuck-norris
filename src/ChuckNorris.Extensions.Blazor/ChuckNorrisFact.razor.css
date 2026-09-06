@@ -1,0 +1,22 @@
+.chuck-norris-fact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid #b22222;
+    background: #1a1a1a;
+    color: #f0f0f0;
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.chuck-norris-fact:hover {
+    background: #2a2a2a;
+}
+
+.emoji {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}

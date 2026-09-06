@@ -1,0 +1,46 @@
+name: 🥋 Chuck Norris CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  build-and-test:
+    name: Build & Test (Chuck Norris Style)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🥋 Chuck Norris doesn't check out code. Code checks itself out.
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: 🔨 Chuck Norris doesn't restore packages. Packages restore themselves.
+        run: dotnet restore
+
+      - name: 🏗️ Build — Chuck Norris never gets build errors
+        run: dotnet build --no-restore --configuration Release
+
+      - name: ✅ Run tests — they all pass. They wouldn't dare fail.
+        run: dotnet run --project tests/ChuckNorris.Extensions.Tests/ChuckNorris.Extensions.Tests.csproj --configuration Release --no-build
+
+      - name: 🥋 Today's Chuck Norris wisdom
+        run: |
+          FACTS=(
+            "Chuck Norris can divide by zero."
+            "Chuck Norris doesn't call the database. The database calls Chuck Norris."
+            "Chuck Norris's code never throws exceptions. Exceptions are too afraid."
+            "Chuck Norris doesn't fix bugs. Bugs fix themselves in his presence."
+            "Chuck Norris can unit test production code — in production."
+            "Chuck Norris pushes directly to main. The pipeline passes out of fear."
+            "Chuck Norris doesn't need async/await. Everything runs synchronously out of respect."
+            "When Chuck Norris throws an exception, it catches itself."
+            "Chuck Norris compiled his first program before the computer was turned on."
+            "Chuck Norris doesn't merge branches. Branches merge into Chuck Norris."
+          )
+          echo "💡 ${FACTS[$RANDOM % ${#FACTS[@]}]}"

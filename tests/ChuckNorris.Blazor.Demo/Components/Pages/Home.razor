@@ -1,0 +1,53 @@
+@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Chuck Norris 🥋</PageTitle>
+
+<h1>🥋 ChuckNorris.Extensions.Blazor Demo</h1>
+<p>Chuck Norris doesn't do demos. The demo does itself in his honor.</p>
+<p><em>Hint: try the Konami code — ↑↑↓↓←→←→ 😄</em></p>
+
+<hr />
+
+<h2>ChuckNorrisFact</h2>
+<p>Click the fact to get a new one:</p>
+<ChuckNorrisFact />
+
+<hr />
+
+<h2>ChuckNorrisAlert</h2>
+<ChuckNorrisAlert Type="ChuckNorrisAlertType.Info" Title="Did you know?">
+    Chuck Norris doesn't need dependency injection. Dependencies inject themselves.
+</ChuckNorrisAlert>
+<br />
+<ChuckNorrisAlert Type="ChuckNorrisAlertType.Success" Title="Build succeeded">
+    Chuck Norris's code compiles on the first try. Always.
+</ChuckNorrisAlert>
+<br />
+<ChuckNorrisAlert Type="ChuckNorrisAlertType.Warning" Title="Warning">
+    NuGet packages update themselves when Chuck Norris is nearby.
+</ChuckNorrisAlert>
+<br />
+<ChuckNorrisAlert Type="ChuckNorrisAlertType.Danger" Title="Critical">
+    Chuck Norris can divide by zero.
+</ChuckNorrisAlert>
+
+<hr />
+
+<h2>ChuckNorrisButton</h2>
+<p>Last clicked: @_lastClicked</p>
+<ChuckNorrisButton OnClicked="OnButtonClicked">Roundhouse Kick</ChuckNorrisButton>
+
+<hr />
+
+<h2>ChuckNorrisSpinner</h2>
+<ChuckNorrisSpinner />
+<br />
+<ChuckNorrisSpinner Message="Loading Chuck Norris facts... please be patient." />
+
+<hr />
+
+<h2>ChuckNorrisKonami</h2>
+<p>Type ↑↑↓↓←→←→ anywhere on this page to trigger the Easter egg.</p>
+<ChuckNorrisKonami />
+
