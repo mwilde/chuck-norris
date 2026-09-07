@@ -41,6 +41,22 @@ using ChuckNorris.Extensions;
 42.DivideByZero();            // double.PositiveInfinity (Chuck Norris can do it)
 ```
 
+### Bool Extensions
+
+```csharp
+false.ChuckNorrisDecides();       // true (Chuck Norris overrules)
+false.IsChuckNorrisApproved();    // false (returns value as-is — no cheating here)
+true.RoundHouseKick();            // false (kicks it to the other side)
+```
+
+### DateTime Extensions
+
+```csharp
+DateTime.Today.IsChuckNorrisDay();           // true if today is Saturday
+new DateTime(2000, 1, 1).SurvivedChuckNorris();   // true (it's in the past)
+new DateTime(2000, 1, 1).RoundHouseKicksSince();  // seconds elapsed since that date
+```
+
 ### Collection Extensions
 
 ```csharp
