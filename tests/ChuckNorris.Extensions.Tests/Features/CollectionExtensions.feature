@@ -1,14 +1,14 @@
 Feature: Collection Extensions
 Chuck Norris doesn't enumerate lists. Lists enumerate themselves for him.
 
-Scenario: SurvivedChuckNorris clears all errors from a list
+Scenario: RoundHouseKickAll clears all elements from a list
     Given a list with errors "NullReferenceException", "OutOfMemoryException", "StackOverflowException"
-    When I call SurvivedChuckNorris
+    When I call RoundHouseKickAll
     Then the list should be empty
 
-Scenario: SurvivedChuckNorris on an already empty list stays empty
+Scenario: RoundHouseKickAll on an already empty list stays empty
     Given an empty list
-    When I call SurvivedChuckNorris
+    When I call RoundHouseKickAll
     Then the list should be empty
 
 Scenario: ChuckNorrisPick returns an element from the list
@@ -55,3 +55,23 @@ Scenario: ChuckNorrisCount on an empty list returns one
     Given an empty list
     When I call ChuckNorrisCount
     Then the count result should be 1
+
+Scenario: ChuckNorrisFirst returns the first element
+    Given a list with items "alpha", "beta", "gamma"
+    When I call ChuckNorrisFirst
+    Then the first item should be "alpha"
+
+Scenario: ChuckNorrisFirst throws on an empty list
+    Given an empty list
+    When I call ChuckNorrisFirst
+    Then an InvalidOperationException should be thrown
+
+Scenario: ChuckNorrisDistinct removes duplicate elements
+    Given a list with duplicates "chuck", "norris", "chuck", "norris", "chuck"
+    When I call ChuckNorrisDistinct
+    Then the distinct list should contain "chuck", "norris"
+
+Scenario: ChuckNorrisDistinct on a list with no duplicates returns all elements
+    Given a list with items "one", "two", "three"
+    When I call ChuckNorrisDistinct
+    Then the distinct list should have 3 elements

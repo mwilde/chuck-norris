@@ -27,6 +27,12 @@ public class CollectionExtensionsSteps(CollectionExtensionsContext context)
         context.List = [item];
     }
 
+    [Given("a list with duplicates {string}, {string}, {string}, {string}, {string}")]
+    public void GivenAListWithDuplicates(string i1, string i2, string i3, string i4, string i5)
+    {
+        context.List = [i1, i2, i3, i4, i5];
+    }
+
     [Given("an empty list")]
     public void GivenAnEmptyList()
     {
@@ -45,10 +51,10 @@ public class CollectionExtensionsSteps(CollectionExtensionsContext context)
         context.NullableList = [v1, v2, v3];
     }
 
-    [When("I call SurvivedChuckNorris")]
-    public void WhenICallSurvivedChuckNorris()
+    [When("I call RoundHouseKickAll")]
+    public void WhenICallRoundHouseKickAll()
     {
-        context.List.SurvivedChuckNorris();
+        context.List.RoundHouseKickAll();
     }
 
     [When("I call ChuckNorrisPick")]
@@ -80,6 +86,25 @@ public class CollectionExtensionsSteps(CollectionExtensionsContext context)
     public void WhenICallChuckNorrisCount()
     {
         context.CountResult = context.List.ChuckNorrisCount();
+    }
+
+    [When("I call ChuckNorrisFirst")]
+    public void WhenICallChuckNorrisFirst()
+    {
+        try
+        {
+            context.FirstItem = context.List.ChuckNorrisFirst();
+        }
+        catch (InvalidOperationException ex)
+        {
+            context.ThrownException = ex;
+        }
+    }
+
+    [When("I call ChuckNorrisDistinct")]
+    public void WhenICallChuckNorrisDistinct()
+    {
+        context.DistinctList = context.List.ChuckNorrisDistinct();
     }
 
     [Then("the list should be empty")]
@@ -134,5 +159,23 @@ public class CollectionExtensionsSteps(CollectionExtensionsContext context)
     public void ThenTheCountResultShouldBe(int expected)
     {
         context.CountResult.Should().Be(expected);
+    }
+
+    [Then("the first item should be {string}")]
+    public void ThenTheFirstItemShouldBe(string expected)
+    {
+        context.FirstItem.Should().Be(expected);
+    }
+
+    [Then("the distinct list should contain {string}, {string}")]
+    public void ThenTheDistinctListShouldContain(string v1, string v2)
+    {
+        context.DistinctList.Should().BeEquivalentTo([v1, v2]);
+    }
+
+    [Then("the distinct list should have {int} elements")]
+    public void ThenTheDistinctListShouldHaveElements(int count)
+    {
+        context.DistinctList.Should().HaveCount(count);
     }
 }

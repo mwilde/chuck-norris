@@ -12,7 +12,11 @@ public sealed class CollectionExtensionsContext
 
     public IEnumerable<string>? FilteredList { get; set; }
 
+    public IEnumerable<string>? DistinctList { get; set; }
+
     public string? PickedItem { get; set; }
+
+    public string? FirstItem { get; set; }
 
     public int CountResult { get; set; }
 
