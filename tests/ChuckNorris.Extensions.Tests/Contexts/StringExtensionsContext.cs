@@ -7,4 +7,6 @@ public sealed class StringExtensionsContext
     public string? StringResult { get; set; }
 
     public bool BoolResult { get; set; }
+
+    public int IntResult { get; set; }
 }

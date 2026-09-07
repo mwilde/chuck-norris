@@ -30,4 +30,32 @@ public static class StringExtensions
     /// <returns>The original string with the Chuck Norris approval stamp appended.</returns>
     public static string ChuckNorrisApproved(this string value)
         => $"{value} — Chuck Norris approved. {ChuckNorrisEmojis.Approved}";
+
+    /// <summary>
+    /// Converts the string to Chuck Norris case — alternating upper and lower characters,
+    /// because Chuck Norris doesn't follow anyone's casing rules.
+    /// </summary>
+    /// <param name="value">The string to convert.</param>
+    /// <returns>The string with alternating upper/lower characters.</returns>
+    public static string ToChuckNorrisCase(this string value)
+    {
+        var chars = value.ToCharArray();
+        for (var i = 0; i < chars.Length; i++)
+        {
+            chars[i] = i % 2 == 0
+                ? char.ToUpperInvariant(chars[i])
+                : char.ToLowerInvariant(chars[i]);
+        }
+
+        return new string(chars);
+    }
+
+    /// <summary>
+    /// Returns the length of the string — but Chuck Norris always adds one,
+    /// because he's always one step ahead.
+    /// </summary>
+    /// <param name="value">The string to measure.</param>
+    /// <returns>The string length plus one.</returns>
+    public static int ChuckNorrisLength(this string value)
+        => value.Length + 1;
 }

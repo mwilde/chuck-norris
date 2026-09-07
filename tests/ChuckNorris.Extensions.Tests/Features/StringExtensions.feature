@@ -30,3 +30,13 @@ Scenario: ChuckNorrisApproved appends the approval stamp
     Given the string "This code"
     When I apply ChuckNorrisApproved
     Then the result should contain "Chuck Norris approved"
+
+Scenario: ToChuckNorrisCase alternates upper and lower characters
+    Given the string "hello"
+    When I apply ToChuckNorrisCase
+    Then the string result should be "HeLlO"
+
+Scenario: ChuckNorrisLength returns length plus one
+    Given the string "hello"
+    When I get the Chuck Norris length
+    Then the int result should be 6

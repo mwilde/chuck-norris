@@ -60,4 +60,20 @@ public class StringExtensionsSteps(StringExtensionsContext context)
     {
         context.StringResult.Should().Contain(expected);
     }
+
+    [When("I apply ToChuckNorrisCase")]
+    public void WhenIApplyToChuckNorrisCase()
+        => context.StringResult = context.Input!.ToChuckNorrisCase();
+
+    [When("I get the Chuck Norris length")]
+    public void WhenIGetChuckNorrisLength()
+        => context.IntResult = context.Input!.ChuckNorrisLength();
+
+    [Then("the string result should be {string}")]
+    public void ThenStringResultShouldBe(string expected)
+        => context.StringResult.Should().Be(expected);
+
+    [Then("the int result should be {int}")]
+    public void ThenIntResultShouldBe(int expected)
+        => context.IntResult.Should().Be(expected);
 }
