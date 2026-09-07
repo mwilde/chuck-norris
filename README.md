@@ -153,7 +153,16 @@ var errors = new List<string> { "NullRef", "Timeout" };
 errors.SurvivedChuckNorris();   // clears the list — Chuck Norris doesn't allow errors
 
 var items = new List<string> { "roundhouse", "kick", "beard" };
-items.ChuckNorrisPick();        // returns a random element, Chuck Norris style
+items.ChuckNorrisPick();        // returns a random element
+
+items.ChuckNorrisShuffle();     // returns the list in a new random order
+
+// Only the strong survive Chuck Norris (filters out nulls)
+var withNulls = new List<string?> { "chuck", null, "norris", null };
+withNulls.SurviveChuckNorris(); // ["chuck", "norris"]
+
+// Chuck Norris is always counted
+items.ChuckNorrisCount();       // 4 (3 items + Chuck Norris himself)
 ```
 
 ### Random Chuck Norris Fact
