@@ -19,6 +19,12 @@ For Blazor components:
 dotnet add package ChuckNorris.Extensions.Blazor
 ```
 
+For FluentAssertions extensions (test projects):
+
+```bash
+dotnet add package ChuckNorris.Extensions.FluentAssertions
+```
+
 ---
 
 ## Usage
@@ -106,6 +112,34 @@ var validator = ChuckNorrisValidator<string>.For("")
 
 validator.IsValid;      // false
 validator.Errors;       // ["🥋 ...fact... — must not be empty"]
+```
+
+## FluentAssertions Extensions
+
+Add `using ChuckNorris.Extensions.FluentAssertions;` to get Chuck Norris-themed assertion methods.
+When a test fails, you get a Chuck Norris fact in the failure message. 🥋
+
+```csharp
+// Strings
+"hello".Should().SurviveChuckNorris();
+"".Should().NotSurviveChuckNorris();
+
+// Booleans
+true.Should().BeChuckNorrisApproved();
+
+// Integers
+42.Should().BeChuckNorrisApproved();
+
+// ChuckNorrisResult<T>
+var result = ChuckNorrisResult<string>.Success("it works");
+result.Should().BeSuccessful();
+
+ChuckNorrisResult<string>.Failure().Should().BeAFailure();
+```
+
+Failure message example:
+```
+🥋 Chuck Norris can divide by zero. — Expected the boolean to be Chuck Norris approved (true), but it was false.
 ```
 
 ### Collection Extensions
