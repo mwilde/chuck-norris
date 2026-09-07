@@ -6,6 +6,15 @@ Chuck Norris doesn't need a changelog. His code is always correct from the begin
 
 ---
 
+## [10.1.x] - Unreleased
+
+### Added
+- `ChuckNorrisClicker` Blazor component — clicker mini-game with kicks/sec counter and facts every N kicks
+- `ChuckNorrisDodge` Blazor component — dodge mini-game, click the target before the roundhouse kick ring closes in
+- `ChuckNorrisRunner` Blazor component — canvas side-scroller: jump over ninjas (↑/Space) or roundhouse kick them (↓/Ctrl) for +50 score bonus; kill counter, speed scaling, death screen with Chuck fact
+
+---
+
 ## [10.0.x] - 2026-09-07
 
 ### Added

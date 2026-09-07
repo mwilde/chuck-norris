@@ -1,0 +1,154 @@
+.chuck-dodge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 2rem;
+    background: #111;
+    border-radius: 8px;
+    color: #f0f0f0;
+    max-width: 480px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.chuck-dodge__header {
+    text-align: center;
+}
+
+.chuck-dodge__title {
+    margin: 0 0 0.25rem;
+    font-size: 1.6rem;
+    color: #f0f0f0;
+}
+
+.chuck-dodge__subtitle {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+}
+
+.chuck-dodge__stats {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.chuck-dodge__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.chuck-dodge__stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b22222;
+}
+
+.chuck-dodge__stat-label {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chuck-dodge__arena {
+    position: relative;
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: default;
+}
+
+.chuck-dodge__kick-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #b22222;
+    pointer-events: none;
+    transition: none;
+}
+
+.chuck-dodge__target {
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s;
+    padding: 0;
+    line-height: 1;
+}
+
+.chuck-dodge__target:hover {
+    transform: scale(1.15);
+}
+
+.chuck-dodge__target:active {
+    transform: scale(0.9);
+}
+
+.chuck-dodge__hint {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+.chuck-dodge__start-btn {
+    padding: 0.75rem 2rem;
+    background: #b22222;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.chuck-dodge__start-btn:hover {
+    background: #cc2222;
+    transform: scale(1.03);
+}
+
+.chuck-dodge__start-btn:active {
+    transform: scale(0.97);
+}
+
+.chuck-dodge__gameover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.chuck-dodge__gameover-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #b22222;
+    margin: 0;
+}
+
+.chuck-dodge__gameover-fact {
+    font-style: italic;
+    color: #aaa;
+    font-size: 0.9rem;
+    border-left: 3px solid #b22222;
+    padding-left: 0.75rem;
+    text-align: left;
+    margin: 0;
+}
+
+.chuck-dodge__gameover-score {
+    color: #ddd;
+    margin: 0;
+    font-size: 0.95rem;
+}

@@ -1,5 +1,10 @@
 ﻿@inherits LayoutComponentBase
 
+<nav class="chuck-nav">
+    <a href="/">🥋 Components</a>
+    <a href="/games">🎮 Games</a>
+</nav>
+
 <main>
     @Body
 </main>
@@ -9,4 +14,25 @@
         <a href="." class="reload">Reload</a>
     </ChuckNorrisAlert>
 </div>
+
+<style>
+    .chuck-nav {
+        display: flex;
+        gap: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background: #1a1a1a;
+        border-bottom: 2px solid #b22222;
+    }
+
+    .chuck-nav a {
+        color: #f0f0f0;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.95rem;
+    }
+
+    .chuck-nav a:hover {
+        color: #b22222;
+    }
+</style>
 
