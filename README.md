@@ -150,16 +150,22 @@ Failure message example:
 
 ```csharp
 var errors = new List<string> { "NullRef", "Timeout" };
-errors.SurvivedChuckNorris();   // clears the list — Chuck Norris doesn't allow errors
+errors.RoundHouseKickAll();     // clears the list — Chuck Norris shows no mercy
 
 var items = new List<string> { "roundhouse", "kick", "beard" };
 items.ChuckNorrisPick();        // returns a random element
 
 items.ChuckNorrisShuffle();     // returns the list in a new random order
 
+items.ChuckNorrisFirst();       // returns the first element, or throws with a Chuck Norris fact
+
 // Only the strong survive Chuck Norris (filters out nulls)
 var withNulls = new List<string?> { "chuck", null, "norris", null };
 withNulls.SurviveChuckNorris(); // ["chuck", "norris"]
+
+// Chuck Norris doesn't allow duplicates
+var dupes = new List<string> { "chuck", "norris", "chuck" };
+dupes.ChuckNorrisDistinct();    // ["chuck", "norris"]
 
 // Chuck Norris is always counted
 items.ChuckNorrisCount();       // 4 (3 items + Chuck Norris himself)
