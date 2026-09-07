@@ -6,12 +6,12 @@ namespace ChuckNorris.Extensions;
 public static class CollectionExtensions
 {
     /// <summary>
-    /// Removes all errors from the list. Chuck Norris doesn't allow errors to exist.
+    /// Roundhouse kicks every element out of the list. Chuck Norris shows no mercy.
     /// </summary>
     /// <typeparam name="T">The element type of the list.</typeparam>
     /// <param name="list">The list to clear.</param>
     /// <returns>The same (now empty) list.</returns>
-    public static IList<T> SurvivedChuckNorris<T>(this IList<T> list)
+    public static IList<T> RoundHouseKickAll<T>(this IList<T> list)
     {
         list.Clear();
         return list;
@@ -70,4 +70,31 @@ public static class CollectionExtensions
     /// <returns>The number of elements plus one, because Chuck Norris is always in the room.</returns>
     public static int ChuckNorrisCount<T>(this IEnumerable<T> source)
         => source.Count() + 1;
+
+    /// <summary>
+    /// Returns the first element. Chuck Norris always gets what he wants — if there is nothing, he is not amused.
+    /// </summary>
+    /// <typeparam name="T">The element type.</typeparam>
+    /// <param name="source">The sequence to take from. Must not be empty.</param>
+    /// <returns>The first element of the sequence.</returns>
+    /// <exception cref="InvalidOperationException">Thrown when the sequence is empty.</exception>
+    public static T ChuckNorrisFirst<T>(this IEnumerable<T> source)
+    {
+        var first = source.FirstOrDefault();
+        if (first is null)
+        {
+            throw new InvalidOperationException($"Chuck Norris demands a first element. {ChuckNorrisFacts.GetRandom()}");
+        }
+
+        return first;
+    }
+
+    /// <summary>
+    /// Removes duplicate elements. Chuck Norris doesn't allow duplicates — there is only one Chuck Norris.
+    /// </summary>
+    /// <typeparam name="T">The element type.</typeparam>
+    /// <param name="source">The sequence to deduplicate.</param>
+    /// <returns>A sequence with duplicate elements removed.</returns>
+    public static IEnumerable<T> ChuckNorrisDistinct<T>(this IEnumerable<T> source)
+        => source.Distinct();
 }
