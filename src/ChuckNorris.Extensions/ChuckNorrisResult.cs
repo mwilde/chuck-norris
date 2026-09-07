@@ -5,7 +5,7 @@ namespace ChuckNorris.Extensions;
 /// Because if your code fails, at least you get a good story.
 /// </summary>
 /// <typeparam name="T">The type of the success value.</typeparam>
-public sealed class ChuckNorrisResult<T>
+public sealed record ChuckNorrisResult<T>
 {
     private readonly T? _value;
 
@@ -24,7 +24,7 @@ public sealed class ChuckNorrisResult<T>
     }
 
     /// <summary>Gets a value indicating whether the result is a success.</summary>
-    public bool IsSuccess { get; }
+    public bool IsSuccess { get; init; }
 
     /// <summary>Gets a value indicating whether the result is a failure.</summary>
     public bool IsFailure => !IsSuccess;
@@ -33,7 +33,7 @@ public sealed class ChuckNorrisResult<T>
     /// Gets the error message — always a Chuck Norris fact — when the result is a failure.
     /// Empty string on success.
     /// </summary>
-    public string Error { get; }
+    public string Error { get; init; }
 
     /// <summary>
     /// Gets the success value.
