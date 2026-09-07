@@ -10,6 +10,8 @@ jobs:
   build-and-test:
     name: Build & Test (Chuck Norris Style)
     runs-on: ubuntu-latest
+    env:
+      NBGV_CloudBuildAllVars: false
 
     steps:
       - name: 🥋 Chuck Norris doesn't check out code. Code checks itself out.
