@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
+    env:
+      NBGV_CloudBuildAllVars: false
 
     steps:
       - name: 🥋 Chuck Norris doesn't check out code. Code checks itself out.
