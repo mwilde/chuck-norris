@@ -32,6 +32,8 @@ using ChuckNorris.Extensions;
 "my code".ChuckNorrisApproved();    // "my code — Chuck Norris approved. 💪"
 "valid".SurvivesChuckNorris();      // true
 "".SurvivesChuckNorris();           // false (empty strings don't survive)
+"hello".ToChuckNorrisCase();        // "HeLlO" (Chuck Norris doesn't follow casing rules)
+"hello".ChuckNorrisLength();        // 6 (always one ahead)
 ```
 
 ### Integer Extensions
