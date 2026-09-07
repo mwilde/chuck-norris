@@ -27,10 +27,11 @@ if ($localHash -ne $remoteHash) {
 Write-Host "[BUILD] Resolving version from Nerdbank.GitVersioning..." -ForegroundColor Yellow
 $buildOutput = dotnet build src/ChuckNorris.Extensions/ChuckNorris.Extensions.csproj --configuration Release --verbosity normal 2>&1
 
-$match = [regex]::Match(($buildOutput -join "`n"), '(\d+\.\d+\.\d+)')
+# Parse "Building version X.Y.Z from commit" line from Nerdbank output
+$match = [regex]::Match(($buildOutput -join "`n"), 'Building version (\d+\.\d+\.\d+)')
 if ($match.Success) {
-    $tag = "v$($match.Value)"
-    Write-Host "[INFO] Resolved version from build output." -ForegroundColor Gray
+    $tag = "v$($match.Groups[1].Value)"
+    Write-Host "[INFO] Resolved version: $tag" -ForegroundColor Gray
 } else {
     $commitCount = (git rev-list --count HEAD)
     $versionJson = Get-Content version.json | ConvertFrom-Json
