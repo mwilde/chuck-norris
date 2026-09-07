@@ -28,7 +28,9 @@ jobs:
         run: dotnet restore
 
       - name: 🏗️ Build — Chuck Norris never gets build errors
-        run: dotnet build --no-restore --configuration Release
+        run: |
+          dotnet build --no-restore --configuration Release
+          dotnet build src/ChuckNorris.Extensions.FluentAssertions/ChuckNorris.Extensions.FluentAssertions.csproj --no-restore --configuration Release
 
       - name: ✅ Run tests — they all pass. They wouldn't dare fail.
         run: dotnet run --project tests/ChuckNorris.Extensions.Tests/ChuckNorris.Extensions.Tests.csproj --configuration Release --no-build

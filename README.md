@@ -19,6 +19,12 @@ For Blazor components:
 dotnet add package ChuckNorris.Extensions.Blazor
 ```
 
+For FluentAssertions extensions (test projects):
+
+```bash
+dotnet add package ChuckNorris.Extensions.FluentAssertions
+```
+
 ---
 
 ## Usage
@@ -85,6 +91,55 @@ fail.Error;      // "Chuck Norris can divide by zero." (random fact)
 
 var fail2 = ChuckNorrisResult<string>.Failure("database is on fire");
 fail2.Error;  // "...fact... — database is on fire"
+```
+
+### ChuckNorrisValidator&lt;T&gt;
+
+Fluent validation where every broken rule gives you a Chuck Norris fact:
+
+```csharp
+var result = ChuckNorrisValidator<string>.For(userInput)
+    .Must(s => !string.IsNullOrEmpty(s), "value must not be empty")
+    .Must(s => s.Length >= 3, "value must be at least 3 characters")
+    .ToResult();
+
+result.IsSuccess;       // true / false
+result.Error;           // "...Chuck fact... — value must not be empty"
+
+// Or inspect errors directly
+var validator = ChuckNorrisValidator<string>.For("")
+    .Must(s => !string.IsNullOrEmpty(s), "must not be empty");
+
+validator.IsValid;      // false
+validator.Errors;       // ["🥋 ...fact... — must not be empty"]
+```
+
+## FluentAssertions Extensions
+
+Add `using ChuckNorris.Extensions.FluentAssertions;` to get Chuck Norris-themed assertion methods.
+When a test fails, you get a Chuck Norris fact in the failure message. 🥋
+
+```csharp
+// Strings
+"hello".Should().SurviveChuckNorris();
+"".Should().NotSurviveChuckNorris();
+
+// Booleans
+true.Should().BeChuckNorrisApproved();
+
+// Integers
+42.Should().BeChuckNorrisApproved();
+
+// ChuckNorrisResult<T> — use ChuckShould() to avoid ambiguity with standard Should()
+var result = ChuckNorrisResult<string>.Success("it works");
+result.ChuckShould().BeSuccessful();
+
+ChuckNorrisResult<string>.Failure().ChuckShould().BeAFailure();
+```
+
+Failure message example:
+```
+🥋 Chuck Norris can divide by zero. — Expected the boolean to be Chuck Norris approved (true), but it was false.
 ```
 
 ### Collection Extensions
