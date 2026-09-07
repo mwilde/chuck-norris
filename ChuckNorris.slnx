@@ -2,6 +2,7 @@
   <Folder Name="/src/">
     <Project Path="src/ChuckNorris.Extensions.Blazor/ChuckNorris.Extensions.Blazor.csproj" />
     <Project Path="src/ChuckNorris.Extensions/ChuckNorris.Extensions.csproj" />
+    <Project Path="src/ChuckNorris.Extensions.FluentAssertions/ChuckNorris.Extensions.FluentAssertions.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/ChuckNorris.Blazor.Demo/ChuckNorris.Blazor.Demo.csproj" />

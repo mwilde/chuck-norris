@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>ChuckNorris.Extensions.FluentAssertions</PackageId>
+    <Authors>Moritz Wilde</Authors>
+    <Description>Chuck Norris-themed FluentAssertions extensions. When your tests fail, at least you get a Chuck Norris fact. 🥋</Description>
+    <PackageTags>chuck-norris;easter-egg;fun;fluentassertions;testing;extensions</PackageTags>
+    <RepositoryUrl>https://github.com/mwilde/chuck-norris</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/mwilde/chuck-norris</PackageProjectUrl>
+    <Copyright>Copyright (c) 2024 Moritz Wilde</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="8.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChuckNorris.Extensions\ChuckNorris.Extensions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\assets\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
