@@ -5,7 +5,8 @@ using Microsoft.JSInterop;
 
 /// <summary>
 /// A Chuck Norris-themed side-scrolling canvas runner game.
-/// Jump over ninjas using ↑ / Space / tap. Speed increases over time.
+/// Jump over ninjas with ↑ / Space, or kick them with ↓ / Ctrl.
+/// Kicking a ninja gives +50 score bonus. Speed increases over time.
 /// Chuck Norris doesn't run. He advances toward the enemy.
 /// </summary>
 public partial class ChuckNorrisRunner : ComponentBase, IAsyncDisposable
@@ -31,7 +32,9 @@ public partial class ChuckNorrisRunner : ComponentBase, IAsyncDisposable
     private DotNetObjectReference<ChuckNorrisRunner>? _dotnetRef;
     private RunnerState _state = RunnerState.Idle;
     private int _score;
+    private int _kills;
     private int _highScore;
+    private int _highKills;
     private string _deathFact = string.Empty;
     private string _subtitle = string.Empty;
 
@@ -70,6 +73,7 @@ public partial class ChuckNorrisRunner : ComponentBase, IAsyncDisposable
         }
 
         _state = RunnerState.Playing;
+        _kills = 0;
         _deathFact = string.Empty;
         StateHasChanged();
 
@@ -78,12 +82,18 @@ public partial class ChuckNorrisRunner : ComponentBase, IAsyncDisposable
 
     /// <summary>Called from JS when the player dies.</summary>
     [JSInvokable]
-    public async Task OnGameOver(int score)
+    public async Task OnGameOver(int score, int kills)
     {
         _score = score;
+        _kills = kills;
         if (_score > _highScore)
         {
             _highScore = _score;
+        }
+
+        if (_kills > _highKills)
+        {
+            _highKills = _kills;
         }
 
         _state = RunnerState.Dead;
