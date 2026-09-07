@@ -63,7 +63,7 @@ export function init(canvasId, dotnetRef) {
 
     const onKey = (e) => {
         if (['ArrowUp', 'ArrowDown', 'Space', ' ', 'ArrowLeft', 'ArrowRight'].includes(e.key)) e.preventDefault();
-        if (!state.running || state.dead) return;
+        if (!state.running || state.dead || e.repeat) return;
         if (e.key === 'ArrowUp' || e.key === ' ') jump(state);
         if (e.key === 'ArrowDown' || e.key === 'Control') kick(state);
     };
