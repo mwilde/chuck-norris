@@ -9,13 +9,10 @@ namespace ChuckNorris.Extensions.FluentAssertions;
 /// </summary>
 public class ChuckNorrisResultAssertions<T> : ReferenceTypeAssertions<ChuckNorrisResult<T>, ChuckNorrisResultAssertions<T>>
 {
-    private readonly AssertionChain _chain;
-
     /// <summary>Initializes a new instance of <see cref="ChuckNorrisResultAssertions{T}"/>.</summary>
     public ChuckNorrisResultAssertions(ChuckNorrisResult<T> subject)
-        : base(subject, AssertionChain.GetOrCreate())
+        : base(subject)
     {
-        _chain = AssertionChain.GetOrCreate();
     }
 
     /// <inheritdoc/>
@@ -24,7 +21,7 @@ public class ChuckNorrisResultAssertions<T> : ReferenceTypeAssertions<ChuckNorri
     /// <summary>Asserts that the result is successful.</summary>
     public AndConstraint<ChuckNorrisResultAssertions<T>> BeSuccessful(string because = "", params object[] becauseArgs)
     {
-        _chain
+        Execute.Assertion
             .ForCondition(Subject.IsSuccess)
             .BecauseOf(because, becauseArgs)
             .FailWith($"{ChuckNorrisEmojis.Kick} {ChuckNorrisFacts.GetRandom()} — Expected {{context:ChuckNorrisResult}} to be successful{{reason}}, but it failed with: {Subject.Error}");
@@ -35,7 +32,7 @@ public class ChuckNorrisResultAssertions<T> : ReferenceTypeAssertions<ChuckNorri
     /// <summary>Asserts that the result is a failure.</summary>
     public AndConstraint<ChuckNorrisResultAssertions<T>> BeAFailure(string because = "", params object[] becauseArgs)
     {
-        _chain
+        Execute.Assertion
             .ForCondition(Subject.IsFailure)
             .BecauseOf(because, becauseArgs)
             .FailWith($"{ChuckNorrisEmojis.Kick} {ChuckNorrisFacts.GetRandom()} — Expected {{context:ChuckNorrisResult}} to be a failure{{reason}}, but it was successful.");

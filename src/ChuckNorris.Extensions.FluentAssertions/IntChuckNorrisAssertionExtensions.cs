@@ -18,7 +18,7 @@ public static class IntChuckNorrisAssertionExtensions
         string because = "",
         params object[] becauseArgs)
     {
-        AssertionChain.GetOrCreate()
+        Execute.Assertion
             .ForCondition(true)
             .BecauseOf(because, becauseArgs)
             .FailWith($"{ChuckNorrisEmojis.Kick} {ChuckNorrisFacts.GetRandom()} — Expected the integer to be Chuck Norris approved{{reason}}.");
