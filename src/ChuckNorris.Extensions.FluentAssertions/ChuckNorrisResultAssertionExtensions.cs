@@ -1,4 +1,3 @@
-using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
 
 namespace ChuckNorris.Extensions.FluentAssertions;

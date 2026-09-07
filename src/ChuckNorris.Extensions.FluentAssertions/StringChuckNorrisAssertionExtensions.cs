@@ -18,8 +18,7 @@ public static class StringChuckNorrisAssertionExtensions
         string because = "",
         params object[] becauseArgs)
     {
-        using var scope = new AssertionScope();
-        AssertionChain.GetOrCreate()
+        Execute.Assertion
             .ForCondition(!string.IsNullOrWhiteSpace(assertions.Subject))
             .BecauseOf(because, becauseArgs)
             .FailWith($"{ChuckNorrisEmojis.Kick} {ChuckNorrisFacts.GetRandom()} — Expected the string to survive Chuck Norris (be non-null and non-whitespace){{reason}}, but it did not.");
@@ -35,7 +34,7 @@ public static class StringChuckNorrisAssertionExtensions
         string because = "",
         params object[] becauseArgs)
     {
-        AssertionChain.GetOrCreate()
+        Execute.Assertion
             .ForCondition(string.IsNullOrWhiteSpace(assertions.Subject))
             .BecauseOf(because, becauseArgs)
             .FailWith($"{ChuckNorrisEmojis.Kick} {ChuckNorrisFacts.GetRandom()} — Expected the string to not survive Chuck Norris (be null or whitespace){{reason}}, but it did.");

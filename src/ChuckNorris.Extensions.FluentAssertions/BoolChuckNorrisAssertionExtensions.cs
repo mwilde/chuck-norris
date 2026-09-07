@@ -18,7 +18,7 @@ public static class BoolChuckNorrisAssertionExtensions
         string because = "",
         params object[] becauseArgs)
     {
-        AssertionChain.GetOrCreate()
+        Execute.Assertion
             .ForCondition(assertions.Subject == true)
             .BecauseOf(because, becauseArgs)
             .FailWith($"{ChuckNorrisEmojis.Kick} {ChuckNorrisFacts.GetRandom()} — Expected the boolean to be Chuck Norris approved (true){{reason}}, but it was false.");
