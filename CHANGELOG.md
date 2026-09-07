@@ -11,6 +11,8 @@ Chuck Norris doesn't need a changelog. His code is always correct from the begin
 ### Added
 - `StringExtensions`: `RoundHouseKick()`, `SurvivesChuckNorris()`, `ChuckNorrisApproved()`
 - `IntExtensions`: `IsChuckNorrisApproved()`, `DivideByZero()`
+- `BoolExtensions`: `ChuckNorrisDecides()`, `IsChuckNorrisApproved()`, `RoundHouseKick()`
+- `DateTimeExtensions`: `IsChuckNorrisDay()`, `SurvivedChuckNorris()`, `RoundHouseKicksSince()`
 - `CollectionExtensions`: `SurvivedChuckNorris()`, `ChuckNorrisPick()`
 - `ChuckNorrisFacts`: 25 handcrafted Chuck Norris facts + live API fallback via `https://api.chucknorris.io`
 - `ChuckNorrisMiddleware`: `app.UseChuckNorris()` — injects `X-Chuck-Norris-Fact` header into every HTTP response
