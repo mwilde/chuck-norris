@@ -10,6 +10,7 @@ Chuck Norris doesn't need a changelog. His code is always correct from the begin
 
 ### Added
 - `ChuckNorrisClicker` Blazor component — clicker mini-game with kicks/sec counter and facts every N kicks
+- `ChuckNorrisDodge` Blazor component — dodge mini-game, click the target before the roundhouse kick ring closes in
 
 ---
 

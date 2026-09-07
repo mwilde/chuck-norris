@@ -244,6 +244,9 @@ builder.Services.AddHttpClient();
 <!-- Clicker mini-game — click to roundhouse kick, get facts every 10 kicks -->
 <ChuckNorrisClicker />
 <ChuckNorrisClicker FactInterval="5" />
+
+<!-- Dodge mini-game — click the target before the roundhouse kick ring closes in -->
+<ChuckNorrisDodge />
 ```
 
 `ChuckNorrisConsole` logs a fact to the browser console on page load — no markup needed, just add it anywhere:
