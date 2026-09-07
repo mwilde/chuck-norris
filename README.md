@@ -263,13 +263,6 @@ No additional registration needed — the components are self-contained.
 
 ---
 
-## GitHub Actions
-
-Every push to this repo triggers a build — and prints a Chuck Norris fact in the CI logs.
-Check the **Actions** tab. You're welcome.
-
----
-
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Chuck Norris is watching.
