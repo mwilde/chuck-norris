@@ -206,11 +206,7 @@ Add to `_Imports.razor`:
 @using ChuckNorris.Extensions.Blazor
 ```
 
-And register in `Program.cs`:
-
-```csharp
-builder.Services.AddHttpClient();
-```
+No additional registration needed — the components are self-contained.
 
 ### Components
 
