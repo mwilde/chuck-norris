@@ -12,6 +12,10 @@
             <span class="chuck-runner__stat-label">Score</span>
         </div>
         <div class="chuck-runner__stat">
+            <span class="chuck-runner__stat-value">@_kills</span>
+            <span class="chuck-runner__stat-label">Kills</span>
+        </div>
+        <div class="chuck-runner__stat">
             <span class="chuck-runner__stat-value">@_highScore</span>
             <span class="chuck-runner__stat-label">Best</span>
         </div>
@@ -29,13 +33,13 @@
     @if (_state == RunnerState.Dead && !string.IsNullOrEmpty(_deathFact))
     {
         <div class="chuck-runner__fact">
-            <span class="chuck-runner__fact-score">You ran @_score before a ninja stopped you.</span>
+            <span class="chuck-runner__fact-score">You ran @_score and killed @_kills ninjas before one stopped you.</span>
             <span class="chuck-runner__fact-text">@_deathFact</span>
         </div>
     }
 
     @if (_state == RunnerState.Playing)
     {
-        <p class="chuck-runner__hint">↑ Arrow / Space / Tap to jump</p>
+        <p class="chuck-runner__hint">↑ / Space = Jump &nbsp;&nbsp; ↓ / Ctrl = Kick &nbsp;&nbsp; (Tap left = Kick, right = Jump)</p>
     }
 </div>
