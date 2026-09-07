@@ -5,6 +5,10 @@
 A collection of Chuck Norris-themed .NET extensions, middleware, and general nonsense.
 Because every codebase deserves a roundhouse kick.
 
+[![NuGet](https://img.shields.io/nuget/v/ChuckNorris.Extensions?label=ChuckNorris.Extensions&color=blue)](https://www.nuget.org/packages/ChuckNorris.Extensions)
+[![NuGet](https://img.shields.io/nuget/v/ChuckNorris.Extensions.Blazor?label=ChuckNorris.Extensions.Blazor&color=blue)](https://www.nuget.org/packages/ChuckNorris.Extensions.Blazor)
+[![NuGet](https://img.shields.io/nuget/v/ChuckNorris.Extensions.FluentAssertions?label=ChuckNorris.Extensions.FluentAssertions&color=blue)](https://www.nuget.org/packages/ChuckNorris.Extensions.FluentAssertions)
+
 ---
 
 ## Installation
