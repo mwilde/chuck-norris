@@ -10,6 +10,7 @@ Chuck Norris doesn't need a changelog. His code is always correct from the begin
 
 ### Added
 - Chuck Norris-themed extension methods for strings, integers, booleans, datetimes, exceptions, and collections
+- `IEnumerable` extensions: shuffle, null filtering, and Chuck Norris-aware count
 - Chuck Norris facts — 25 handcrafted + live API fallback via `https://api.chucknorris.io`
 - ASP.NET Core middleware that injects a Chuck Norris fact header into every HTTP response
 - Blazor component library (`ChuckNorris.Extensions.Blazor`) with fact display, alerts, buttons, 404 page, spinner, Konami code easter egg, console logger, and reconnect modal

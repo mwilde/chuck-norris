@@ -25,3 +25,33 @@ Scenario: ChuckNorrisPick throws on an empty list
     Given an empty list
     When I call ChuckNorrisPick
     Then an InvalidOperationException should be thrown
+
+Scenario: ChuckNorrisShuffle returns all elements in a different order
+    Given a list with items "alpha", "beta", "gamma"
+    When I call ChuckNorrisShuffle
+    Then the shuffled list should contain all original items
+
+Scenario: ChuckNorrisShuffle on a single-item list returns the same item
+    Given a list with a single item "lone wolf"
+    When I call ChuckNorrisShuffle
+    Then the shuffled list should contain "lone wolf"
+
+Scenario: SurviveChuckNorris filters out null elements
+    Given a nullable list with values "chuck", null, "norris", null, "wins"
+    When I call SurviveChuckNorris on the nullable list
+    Then the filtered list should contain "chuck", "norris", "wins"
+
+Scenario: SurviveChuckNorris on a list with no nulls returns all elements
+    Given a nullable list with values "a", "b", "c"
+    When I call SurviveChuckNorris on the nullable list
+    Then the filtered list should have 3 elements
+
+Scenario: ChuckNorrisCount returns count plus one
+    Given a list with items "one", "two", "three"
+    When I call ChuckNorrisCount
+    Then the count result should be 4
+
+Scenario: ChuckNorrisCount on an empty list returns one
+    Given an empty list
+    When I call ChuckNorrisCount
+    Then the count result should be 1
