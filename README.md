@@ -130,11 +130,11 @@ true.Should().BeChuckNorrisApproved();
 // Integers
 42.Should().BeChuckNorrisApproved();
 
-// ChuckNorrisResult<T>
+// ChuckNorrisResult<T> — use ChuckShould() to avoid ambiguity with standard Should()
 var result = ChuckNorrisResult<string>.Success("it works");
-result.Should().BeSuccessful();
+result.ChuckShould().BeSuccessful();
 
-ChuckNorrisResult<string>.Failure().Should().BeAFailure();
+ChuckNorrisResult<string>.Failure().ChuckShould().BeAFailure();
 ```
 
 Failure message example:
