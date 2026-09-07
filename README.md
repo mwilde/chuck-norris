@@ -240,6 +240,10 @@ builder.Services.AddHttpClient();
 
 <!-- Konami code easter egg (↑↑↓↓←→←→) -->
 <ChuckNorrisKonami />
+
+<!-- Clicker mini-game — click to roundhouse kick, get facts every 10 kicks -->
+<ChuckNorrisClicker />
+<ChuckNorrisClicker FactInterval="5" />
 ```
 
 `ChuckNorrisConsole` logs a fact to the browser console on page load — no markup needed, just add it anywhere:

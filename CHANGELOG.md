@@ -6,6 +6,13 @@ Chuck Norris doesn't need a changelog. His code is always correct from the begin
 
 ---
 
+## [10.1.x] - Unreleased
+
+### Added
+- `ChuckNorrisClicker` Blazor component — clicker mini-game with kicks/sec counter and facts every N kicks
+
+---
+
 ## [10.0.x] - 2026-09-07
 
 ### Added
