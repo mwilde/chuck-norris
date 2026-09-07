@@ -5,17 +5,17 @@ using FluentAssertions.Primitives;
 namespace ChuckNorris.Extensions.FluentAssertions;
 
 /// <summary>
-/// Chuck Norris-themed assertions for <see cref="ChuckNorrisResult{T}"/>.
+/// Chuck Norris-themed assertion class for <see cref="ChuckNorrisResult{T}"/>.
 /// </summary>
 public class ChuckNorrisResultAssertions<T> : ReferenceTypeAssertions<ChuckNorrisResult<T>, ChuckNorrisResultAssertions<T>>
 {
     private readonly AssertionChain _chain;
 
     /// <summary>Initializes a new instance of <see cref="ChuckNorrisResultAssertions{T}"/>.</summary>
-    public ChuckNorrisResultAssertions(ChuckNorrisResult<T> subject, AssertionChain chain)
-        : base(subject, chain)
+    public ChuckNorrisResultAssertions(ChuckNorrisResult<T> subject)
+        : base(subject, AssertionChain.GetOrCreate())
     {
-        _chain = chain;
+        _chain = AssertionChain.GetOrCreate();
     }
 
     /// <inheritdoc/>
