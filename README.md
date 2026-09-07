@@ -70,6 +70,23 @@ ex.Shout();                // "DATABASE EXPLODED"
 new DivideByZeroException().WasRoundHouseKicked();  // true
 ```
 
+### ChuckNorrisResult&lt;T&gt;
+
+A result type where failures come with a Chuck Norris fact as the error message:
+
+```csharp
+var ok = ChuckNorrisResult<string>.Success("it works");
+ok.IsSuccess;  // true
+ok.Value;      // "it works"
+
+var fail = ChuckNorrisResult<string>.Failure();
+fail.IsFailure;  // true
+fail.Error;      // "Chuck Norris can divide by zero." (random fact)
+
+var fail2 = ChuckNorrisResult<string>.Failure("database is on fire");
+fail2.Error;  // "...fact... — database is on fire"
+```
+
 ### Collection Extensions
 
 ```csharp
