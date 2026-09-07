@@ -87,6 +87,27 @@ var fail2 = ChuckNorrisResult<string>.Failure("database is on fire");
 fail2.Error;  // "...fact... — database is on fire"
 ```
 
+### ChuckNorrisValidator&lt;T&gt;
+
+Fluent validation where every broken rule gives you a Chuck Norris fact:
+
+```csharp
+var result = ChuckNorrisValidator<string>.For(userInput)
+    .Must(s => !string.IsNullOrEmpty(s), "value must not be empty")
+    .Must(s => s.Length >= 3, "value must be at least 3 characters")
+    .ToResult();
+
+result.IsSuccess;       // true / false
+result.Error;           // "...Chuck fact... — value must not be empty"
+
+// Or inspect errors directly
+var validator = ChuckNorrisValidator<string>.For("")
+    .Must(s => !string.IsNullOrEmpty(s), "must not be empty");
+
+validator.IsValid;      // false
+validator.Errors;       // ["🥋 ...fact... — must not be empty"]
+```
+
 ### Collection Extensions
 
 ```csharp
