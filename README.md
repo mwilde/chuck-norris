@@ -57,6 +57,17 @@ new DateTime(2000, 1, 1).SurvivedChuckNorris();   // true (it's in the past)
 new DateTime(2000, 1, 1).RoundHouseKicksSince();  // seconds elapsed since that date
 ```
 
+### Exception Extensions
+
+```csharp
+var ex = new Exception("database exploded");
+ex.ChuckNorrisThrew();     // new Exception("🥋 Chuck Norris threw this: \"...fact...\" — Original error: database exploded")
+ex.WasRoundHouseKicked();  // false (not a DivideByZeroException)
+ex.Shout();                // "DATABASE EXPLODED"
+
+new DivideByZeroException().WasRoundHouseKicked();  // true
+```
+
 ### Collection Extensions
 
 ```csharp
