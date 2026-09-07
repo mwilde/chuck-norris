@@ -240,6 +240,17 @@ builder.Services.AddHttpClient();
 
 <!-- Konami code easter egg (↑↑↓↓←→←→) -->
 <ChuckNorrisKonami />
+
+<!-- Clicker mini-game — click to roundhouse kick, get facts every 10 kicks -->
+<ChuckNorrisClicker />
+<ChuckNorrisClicker FactInterval="5" />
+
+<!-- Dodge mini-game — click the target before the roundhouse kick ring closes in -->
+<ChuckNorrisDodge />
+
+<!-- Side-scrolling runner — jump over ninjas or kick them -->
+<ChuckNorrisRunner />
+<!-- ↑ / Space = jump | ↓ / Ctrl = roundhouse kick (kills ninja, +50 pts) -->
 ```
 
 `ChuckNorrisConsole` logs a fact to the browser console on page load — no markup needed, just add it anywhere:

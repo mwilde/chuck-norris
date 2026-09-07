@@ -1,0 +1,67 @@
+@* #9 — Chuck Norris Dodge game. Click the target before the roundhouse kick reaches it. *@
+<div class="chuck-dodge">
+    <div class="chuck-dodge__header">
+        <h2 class="chuck-dodge__title">🥋 Dodge the Roundhouse</h2>
+        <p class="chuck-dodge__subtitle">Click the target before Chuck's kick reaches it!</p>
+    </div>
+
+    <div class="chuck-dodge__stats">
+        <div class="chuck-dodge__stat">
+            <span class="chuck-dodge__stat-value">@Score</span>
+            <span class="chuck-dodge__stat-label">Score</span>
+        </div>
+        <div class="chuck-dodge__stat">
+            <span class="chuck-dodge__stat-value">@_highScore</span>
+            <span class="chuck-dodge__stat-label">Best</span>
+        </div>
+        <div class="chuck-dodge__stat">
+            <span class="chuck-dodge__stat-value">@_level</span>
+            <span class="chuck-dodge__stat-label">Level</span>
+        </div>
+    </div>
+
+    @if (_state == GameState.Idle)
+    {
+        <button class="chuck-dodge__start-btn" @onclick="StartGame">
+            🥋 Start Dodging
+        </button>
+    }
+    else if (_state == GameState.Playing)
+    {
+        <div class="chuck-dodge__arena"
+             style="width: @(ArenaSize)px; height: @(ArenaSize)px;">
+
+            @* Danger zone — expanding ring closing in on target *@
+            <div class="chuck-dodge__kick-ring"
+                 style="left: @(_targetX + TargetSize / 2)px;
+                        top: @(_targetY + TargetSize / 2)px;
+                        width: @(_kickRingSize)px;
+                        height: @(_kickRingSize)px;
+                        margin-left: @(-_kickRingSize / 2)px;
+                        margin-top: @(-_kickRingSize / 2)px;
+                        opacity: @(_kickRingOpacity.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture));">
+            </div>
+
+            @* Clickable target *@
+            <button class="chuck-dodge__target"
+                    style="left: @(_targetX)px; top: @(_targetY)px;
+                           width: @(TargetSize)px; height: @(TargetSize)px;"
+                    @onclick="HitTarget"
+                    @onclick:stopPropagation>
+                🎯
+            </button>
+        </div>
+        <p class="chuck-dodge__hint">Hit it before the ring closes!</p>
+    }
+    else if (_state == GameState.GameOver)
+    {
+        <div class="chuck-dodge__gameover">
+            <p class="chuck-dodge__gameover-title">💥 ROUNDHOUSE KICKED!</p>
+            <p class="chuck-dodge__gameover-fact">@_deathFact</p>
+            <p class="chuck-dodge__gameover-score">You scored <strong>@Score</strong> before Chuck got you.</p>
+            <button class="chuck-dodge__start-btn" @onclick="StartGame">
+                🥋 Try Again
+            </button>
+        </div>
+    }
+</div>

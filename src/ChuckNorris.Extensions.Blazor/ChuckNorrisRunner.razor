@@ -1,0 +1,45 @@
+@* #10 — Chuck Norris Runner. Side-scrolling canvas runner. Jump over ninjas. *@
+@inject IJSRuntime JS
+<div class="chuck-runner">
+    <div class="chuck-runner__header">
+        <h2 class="chuck-runner__title">🥋 Chuck Norris Runner</h2>
+        <p class="chuck-runner__subtitle">@_subtitle</p>
+    </div>
+
+    <div class="chuck-runner__stats">
+        <div class="chuck-runner__stat">
+            <span class="chuck-runner__stat-value">@_score</span>
+            <span class="chuck-runner__stat-label">Score</span>
+        </div>
+        <div class="chuck-runner__stat">
+            <span class="chuck-runner__stat-value">@_kills</span>
+            <span class="chuck-runner__stat-label">Kills</span>
+        </div>
+        <div class="chuck-runner__stat">
+            <span class="chuck-runner__stat-value">@_highScore</span>
+            <span class="chuck-runner__stat-label">Best</span>
+        </div>
+    </div>
+
+    <canvas id="@_canvasId" class="chuck-runner__canvas"></canvas>
+
+    @if (_state == RunnerState.Idle || _state == RunnerState.Dead)
+    {
+        <button class="chuck-runner__btn" @onclick="StartGame">
+            @(_state == RunnerState.Dead ? "🥋 Try Again" : "🥋 Start Running")
+        </button>
+    }
+
+    @if (_state == RunnerState.Dead && !string.IsNullOrEmpty(_deathFact))
+    {
+        <div class="chuck-runner__fact">
+            <span class="chuck-runner__fact-score">You ran @_score and killed @_kills ninjas before one stopped you.</span>
+            <span class="chuck-runner__fact-text">@_deathFact</span>
+        </div>
+    }
+
+    @if (_state == RunnerState.Playing)
+    {
+        <p class="chuck-runner__hint">↑ / Space = Jump &nbsp;&nbsp; ↓ / Ctrl = Kick &nbsp;&nbsp; (Tap left = Kick, right = Jump)</p>
+    }
+</div>

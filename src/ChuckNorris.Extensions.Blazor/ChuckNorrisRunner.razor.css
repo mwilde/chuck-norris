@@ -1,0 +1,115 @@
+.chuck-runner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 2rem;
+    background: #111;
+    border-radius: 8px;
+    color: #f0f0f0;
+    max-width: 520px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.chuck-runner__header {
+    text-align: center;
+}
+
+.chuck-runner__title {
+    margin: 0 0 0.25rem;
+    font-size: 1.6rem;
+    color: #f0f0f0;
+}
+
+.chuck-runner__subtitle {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+}
+
+.chuck-runner__stats {
+    display: flex;
+    gap: 3rem;
+}
+
+.chuck-runner__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.chuck-runner__stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b22222;
+}
+
+.chuck-runner__stat-label {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chuck-runner__canvas {
+    border: 2px solid #333;
+    border-radius: 6px;
+    display: block;
+    max-width: 100%;
+}
+
+.chuck-runner__btn {
+    padding: 0.75rem 2rem;
+    background: #b22222;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.chuck-runner__btn:hover {
+    background: #cc2222;
+    transform: scale(1.03);
+}
+
+.chuck-runner__btn:active {
+    transform: scale(0.97);
+}
+
+.chuck-runner__hint {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+.chuck-runner__fact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem;
+    border-left: 4px solid #b22222;
+    background: #1a1a1a;
+    border-radius: 0 4px 4px 0;
+    width: 100%;
+}
+
+.chuck-runner__fact-score {
+    font-size: 0.75rem;
+    color: #b22222;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chuck-runner__fact-text {
+    font-style: italic;
+    color: #ddd;
+    font-size: 0.95rem;
+}
