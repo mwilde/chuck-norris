@@ -5,7 +5,7 @@
     "semVer": 2.0
   },
   "cloudBuild": {
-    "setAllVariables": true,
+    "setAllVariables": false,
     "buildNumber": {
       "enabled": true
     }
