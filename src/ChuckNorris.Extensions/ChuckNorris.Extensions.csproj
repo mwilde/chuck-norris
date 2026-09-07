@@ -12,6 +12,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>https://github.com/mwilde/chuck-norris</PackageProjectUrl>
     <Copyright>Copyright (c) 2024 Moritz Wilde</Copyright>
   </PropertyGroup>
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\assets\icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
