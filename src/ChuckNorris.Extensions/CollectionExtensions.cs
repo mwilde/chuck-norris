@@ -33,4 +33,41 @@ public static class CollectionExtensions
 
         return list[Random.Shared.Next(list.Count)];
     }
+
+    /// <summary>
+    /// Shuffles the sequence. Chuck Norris doesn't sort — he rearranges reality.
+    /// </summary>
+    /// <typeparam name="T">The element type.</typeparam>
+    /// <param name="source">The sequence to shuffle.</param>
+    /// <returns>A new shuffled list.</returns>
+    public static IList<T> ChuckNorrisShuffle<T>(this IEnumerable<T> source)
+    {
+        var list = source.ToList();
+        for (var i = list.Count - 1; i > 0; i--)
+        {
+            var j = Random.Shared.Next(i + 1);
+            (list[i], list[j]) = (list[j], list[i]);
+        }
+
+        return list;
+    }
+
+    /// <summary>
+    /// Filters out null elements. Only the strong survive Chuck Norris.
+    /// </summary>
+    /// <typeparam name="T">The element type.</typeparam>
+    /// <param name="source">The sequence to filter.</param>
+    /// <returns>A sequence with all null elements removed.</returns>
+    public static IEnumerable<T> SurviveChuckNorris<T>(this IEnumerable<T?> source)
+        where T : class
+        => source.Where(x => x is not null)!;
+
+    /// <summary>
+    /// Counts the elements. Chuck Norris is always counted — so the result is always at least 1.
+    /// </summary>
+    /// <typeparam name="T">The element type.</typeparam>
+    /// <param name="source">The sequence to count.</param>
+    /// <returns>The number of elements plus one, because Chuck Norris is always in the room.</returns>
+    public static int ChuckNorrisCount<T>(this IEnumerable<T> source)
+        => source.Count() + 1;
 }

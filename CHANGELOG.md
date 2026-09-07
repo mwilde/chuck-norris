@@ -6,6 +6,13 @@ Chuck Norris doesn't need a changelog. His code is always correct from the begin
 
 ---
 
+## [Unreleased]
+
+### Added
+- `IEnumerable` extensions: shuffle, null filtering, and Chuck Norris-aware count
+
+---
+
 ## [10.0.x] - 2026-09-07
 
 ### Added
