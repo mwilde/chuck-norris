@@ -40,4 +40,4 @@ jobs:
           dotnet pack src/ChuckNorris.Extensions.Blazor/ChuckNorris.Extensions.Blazor.csproj --configuration Release --no-build --output ./nupkg
 
       - name: 🚀 Push to NuGet.org
-        run: dotnet nuget push ./nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: dotnet nuget push ./nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{ secrets.NUGET_API_KEY }}
