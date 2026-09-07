@@ -1,0 +1,44 @@
+@* #8 — Chuck Norris Clicker game. Click to roundhouse kick. Get facts every 10 kicks. *@
+<div class="chuck-clicker">
+    <div class="chuck-clicker__header">
+        <h2 class="chuck-clicker__title">🥋 Chuck Norris Clicker</h2>
+        <p class="chuck-clicker__subtitle">@_subtitle</p>
+    </div>
+
+    <div class="chuck-clicker__stats">
+        <div class="chuck-clicker__stat">
+            <span class="chuck-clicker__stat-value">@Kicks</span>
+            <span class="chuck-clicker__stat-label">Total Kicks</span>
+        </div>
+        <div class="chuck-clicker__stat">
+            <span class="chuck-clicker__stat-value">@_kps.ToString("0.0")</span>
+            <span class="chuck-clicker__stat-label">Kicks / sec</span>
+        </div>
+        <div class="chuck-clicker__stat">
+            <span class="chuck-clicker__stat-value">@_nextMilestone</span>
+            <span class="chuck-clicker__stat-label">Next Fact At</span>
+        </div>
+    </div>
+
+    <button class="chuck-clicker__btn @(_kicking ? "chuck-clicker__btn--kick" : "")"
+            @onclick="Kick"
+            @onclick:preventDefault>
+        <span class="chuck-clicker__btn-emoji">🥋</span>
+        <span class="chuck-clicker__btn-label">ROUNDHOUSE KICK</span>
+    </button>
+
+    @if (!string.IsNullOrEmpty(_currentFact))
+    {
+        <div class="chuck-clicker__fact @(_factVisible ? "chuck-clicker__fact--visible" : "")">
+            <span class="chuck-clicker__fact-milestone">@_lastMilestone kicks reached!</span>
+            <span class="chuck-clicker__fact-text">@_currentFact</span>
+        </div>
+    }
+
+    @if (Kicks >= 100)
+    {
+        <div class="chuck-clicker__badge">
+            🏆 Chuck Norris Approved — @Kicks kicks and counting
+        </div>
+    }
+</div>

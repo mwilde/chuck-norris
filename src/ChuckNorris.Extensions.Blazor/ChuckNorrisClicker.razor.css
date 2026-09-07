@@ -1,0 +1,139 @@
+.chuck-clicker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #111;
+    border-radius: 8px;
+    color: #f0f0f0;
+    max-width: 480px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.chuck-clicker__header {
+    text-align: center;
+}
+
+.chuck-clicker__title {
+    margin: 0 0 0.25rem;
+    font-size: 1.6rem;
+    color: #f0f0f0;
+}
+
+.chuck-clicker__subtitle {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+}
+
+.chuck-clicker__stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.chuck-clicker__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.chuck-clicker__stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b22222;
+}
+
+.chuck-clicker__stat-label {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chuck-clicker__btn {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #b22222;
+    background: #1a1a1a;
+    color: #f0f0f0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: transform 0.1s, background 0.1s, box-shadow 0.1s;
+    box-shadow: 0 0 0 0 rgba(178, 34, 34, 0);
+    user-select: none;
+}
+
+.chuck-clicker__btn:hover {
+    background: #2a1a1a;
+    box-shadow: 0 0 16px 2px rgba(178, 34, 34, 0.4);
+}
+
+.chuck-clicker__btn--kick {
+    transform: scale(0.92) rotate(-6deg);
+    background: #b22222;
+    box-shadow: 0 0 24px 4px rgba(178, 34, 34, 0.7);
+}
+
+.chuck-clicker__btn-emoji {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.chuck-clicker__btn-label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    color: #ccc;
+}
+
+.chuck-clicker__fact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem;
+    border-left: 4px solid #b22222;
+    background: #1a1a1a;
+    border-radius: 0 4px 4px 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+.chuck-clicker__fact--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chuck-clicker__fact-milestone {
+    font-size: 0.75rem;
+    color: #b22222;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chuck-clicker__fact-text {
+    font-style: italic;
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+.chuck-clicker__badge {
+    padding: 0.5rem 1rem;
+    background: #b22222;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
